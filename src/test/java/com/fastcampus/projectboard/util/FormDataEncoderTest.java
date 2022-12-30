@@ -23,7 +23,7 @@ class FormDataEncoderTest {
     @TestComponent
     public static class EmptyConfig {}
 
-    public FormDataEncoderTest(@Autowired FormDataEncoder formDataEncoder) {
+    FormDataEncoderTest(@Autowired FormDataEncoder formDataEncoder) {
         this.formDataEncoder = formDataEncoder;
     }
 
