@@ -215,7 +215,6 @@ class ArticleServiceTest {
 
         given(userAccountRepository.getReferenceById(dto.userAccountDto().userId())).willReturn(createUserAccount());
         given(hashtagService.parseHashtagNames(dto.content())).willReturn(expectedHashtagNames);
-        given(hashtagService.findHashtagsByNames(expectedHashtagNames)).willReturn(expectedHashtags);
         given(articleRepository.save(any(Article.class))).willReturn(createArticle());
 
         // When
@@ -242,7 +241,6 @@ class ArticleServiceTest {
         willDoNothing().given(articleRepository).flush();
         willDoNothing().given(hashtagService).deleteHashtagWithoutArticles(any());
         given(hashtagService.parseHashtagNames(dto.content())).willReturn(expectedHashtagNames);
-        given(hashtagService.findHashtagsByNames(expectedHashtagNames)).willReturn(expectedHashtags);
 
         // When
         sut.updateArticle(dto.id(), dto);
