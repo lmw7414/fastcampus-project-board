@@ -5,10 +5,10 @@ import org.springframework.data.rest.core.config.Projection;
 
 import java.time.LocalDateTime;
 
-@Projection(name = "withoutPassword", types = UserAccount.class)
+@Projection(name ="withoutPassword", types = UserAccount.class)
 public interface UserAccountProjection {
-    Long getUserId();
-    UserAccount getEmail();
+    String getUserId();
+    String getEmail();
     String getNickname();
     String getMemo();
     LocalDateTime getCreatedAt();

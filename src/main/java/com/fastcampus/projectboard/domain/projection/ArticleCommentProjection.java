@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 public interface ArticleCommentProjection {
     Long getId();
     UserAccount getUserAccount();
-    String getParentCommentId();
+    Long getParentCommentId();
     String getContent();
     LocalDateTime getCreatedAt();
     String getCreatedBy();
